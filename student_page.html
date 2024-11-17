@@ -88,71 +88,134 @@ try {
 
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="student_page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="student_page.css" />
     <title>個人資料</title>
-</head>
-<body>
+  </head>
+  <body>
     <form method="post">
-        <div>
-            <div class="zone">
-                <h1>基本資料</h1>
-                <hr style="width: 100%;">
-            </div>
-            <div class="self-data">
-                <div class="output">
-                    <p>姓名</p>
-                    <input type="text" name="name" class="ans" value="water" readonly>
-                </div>
-                <div class="output">
-                    <p>班級</p>
-                    <input type="text" name="class" class="ans" value="test1" readonly>
-                </div>
-                <div class="output">
-                    <p>學號</p>
-                    <input type="text" name="student_id" class="ans" value="000000" readonly>
-                </div>
-                <div class="output">
-                    <p>Email</p>
-                    <input type="text" name="email" class="ans" value="test@gmail.com" readonly>
-                </div>
-            </div>
-            <a href="student_server.html" class="l-t">首頁</a>
-            <a href="login.html" class="l-b">登出</a>
-            <!-- <a href="logout.php" class="l-b">登出</a> -->
-            <div class="button-change">
-                <input type="button" id="editBtn" value="修改"  style="position: absolute;bottom: 20px; left: 100px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
-                <input type="submit" name="save" id="saveBtn" class="hidden" value="儲存" onclick="event.preventDefault();" style="position:absolute;bottom: 20px;left: 100px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
-                <input type="button" id="cancelBtn" class="hidden" value="取消" style="position:absolute;bottom: 20px;left: 150px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
-            </div>
+      <div>
+        <div class="zone">
+          <h1>基本資料</h1>
+          <hr style="width: 100%" />
         </div>
+        <div class="self-data">
+          <div class="output">
+            <p>姓名</p>
+            <input type="text" name="name" class="ans" value="water" readonly />
+          </div>
+          <div class="output">
+            <p>班級</p>
+            <input
+              type="text"
+              name="class"
+              class="ans"
+              value="test1"
+              readonly
+            />
+          </div>
+          <div class="output">
+            <p>學號</p>
+            <input
+              type="text"
+              name="student_id"
+              class="ans"
+              value="000000"
+              readonly
+            />
+          </div>
+          <div class="output">
+            <p>Email</p>
+            <input
+              type="text"
+              name="email"
+              class="ans"
+              value="test@gmail.com"
+              readonly
+            />
+          </div>
+        </div>
+        <a href="student_server.html" class="l-t">首頁</a>
+        <a href="login.html" class="l-b">登出</a>
+        <!-- <a href="logout.php" class="l-b">登出</a> -->
+        <div class="button-change">
+          <input
+            type="button"
+            id="editBtn"
+            value="修改"
+            style="
+              position: absolute;
+              bottom: 20px;
+              left: 100px;
+              border: none;
+              cursor: pointer;
+              font-size: 1.2rem;
+              background-color: transparent;
+            "
+          />
+          <input
+            type="submit"
+            name="save"
+            id="saveBtn"
+            class="hidden"
+            value="儲存"
+            onclick="event.preventDefault();"
+            style="
+              position: absolute;
+              bottom: 20px;
+              left: 100px;
+              border: none;
+              cursor: pointer;
+              font-size: 1.2rem;
+              background-color: transparent;
+            "
+          />
+          <input
+            type="button"
+            id="cancelBtn"
+            class="hidden"
+            value="取消"
+            style="
+              position: absolute;
+              bottom: 20px;
+              left: 150px;
+              border: none;
+              cursor: pointer;
+              font-size: 1.2rem;
+              background-color: transparent;
+            "
+          />
+        </div>
+      </div>
     </form>
 
     <script>
-        document.getElementById('editBtn').addEventListener('click', function() {
-            document.querySelectorAll('.ans').forEach(function(input) {
-                input.removeAttribute('readonly');
-                input.classList.add('editable');
-                input.classList.remove('ans');
-            });
-            document.getElementById('editBtn').classList.add('hidden');
-            document.getElementById('saveBtn').classList.remove('hidden');
-            document.getElementById('cancelBtn').classList.remove('hidden');
+      document.getElementById("editBtn").addEventListener("click", function () {
+        document.querySelectorAll(".ans").forEach(function (input) {
+          input.removeAttribute("readonly");
+          input.classList.add("editable");
+          input.classList.remove("ans");
         });
+        document.getElementById("editBtn").classList.add("hidden");
+        document.getElementById("saveBtn").classList.remove("hidden");
+        document.getElementById("cancelBtn").classList.remove("hidden");
+      });
 
-        document.getElementById('cancelBtn').addEventListener('click', function() {
-            document.querySelectorAll('.editable').forEach(function(input) {
-                input.setAttribute('readonly', 'readonly');
-                input.classList.remove('editable');
-                input.classList.add('ans');
-                input.value = input.defaultValue;
-            });
-            document.getElementById('editBtn').classList.remove('hidden');
-            document.getElementById('saveBtn').classList.add('hidden');
-            document.getElementById('cancelBtn').classList.add('hidden');
+      document
+        .getElementById("cancelBtn")
+        .addEventListener("click", function () {
+          document.querySelectorAll(".editable").forEach(function (input) {
+            input.setAttribute("readonly", "readonly");
+            input.classList.remove("editable");
+            input.classList.add("ans");
+            input.value = input.defaultValue;
+          });
+          document.getElementById("editBtn").classList.remove("hidden");
+          document.getElementById("saveBtn").classList.add("hidden");
+          document.getElementById("cancelBtn").classList.add("hidden");
         });
     </script>
-</body>
+  </body>
 </html>
