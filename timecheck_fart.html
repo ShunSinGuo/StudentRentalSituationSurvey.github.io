@@ -1,0 +1,317 @@
+<!-- <?php
+session_start();
+$servername = "127.0.0.1";
+$username = "course";
+$password = "9f8ydwxyuB";
+$dbname = "csie113";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch t08_record data
+$student_id = isset($_GET['student_id']) ? htmlspecialchars($_GET['student_id']) : '';
+$sql_record = "SELECT * FROM t08_record WHERE student_id = '$student_id'";
+$result_record = $conn->query($sql_record);
+
+
+if ($result_record->num_rows > 0) {
+    $row_record = $result_record->fetch_assoc();
+    $student_id = $row_record['student_id'];
+    $landlord_name = $row_record['landlord_name'];
+    $landlord_phone = $row_record['landlord_phone'];
+    $address = $row_record['address'];
+    $status = $row_record['status'];
+    $visit_status = $row_record['visit_status'];
+    $reserve_date = $row_record['reserve_date'];
+    $write_date = $row_record['write_date'];
+    $student_opinion = $row_record['student_opinion'];
+    $manager_opinion = $row_record['manager_opinion'];
+    $visit_check = $row_record['visit_check'];
+    $close_case = $row_record['close_case'];
+    $clean_status = $row_record['clean_status'];
+    $study_status = $row_record['study_status'];
+    $relationship_status = $row_record['relationship_status'];
+    $lighting_status = $row_record['lighting_status'];
+    $friends_status = $row_record['friends_status'];
+    $parents_visit_status = $row_record['parents_visit_status'];
+    $imgData=$row_record['imgData'];
+} else {
+    die("No records found in t08_record table");
+}
+
+// Fetch t08_student_information data
+$sql_student = "SELECT * FROM t08_student_information WHERE student_id = '$student_id'";
+$result_student = $conn->query($sql_student);
+
+if ($result_student->num_rows > 0) {
+    $row_student = $result_student->fetch_assoc();
+    $student_name = $row_student['name'];
+    $student_class = $row_student['department'];
+    $student_email = $row_student['email'];
+} else {
+    die("No records found in t08_student_information table");
+}
+
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Form</title>
+    <link rel="stylesheet" href="admin_fart.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="./admin_server.html">首頁</a>
+        </div>
+        <h1>國立虎尾科技大學113學年度第學期第二學期賃居校外學生輔導訪問記錄表</h1>
+        <form action="timecheck_update_option.php" method="post">
+            <div id="admins-container"></div>
+            <h3>學生</h3>
+            <div id="admin-fields">
+                <div class="form-group">
+                    <label for="admin-0-name">姓名</label>
+                    <input type="text" id="admin-0-name" name="admin-0-name" class="underline-input" value="water" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="admin-0-class">班級</label>
+                    <input type="text" id="admin-0-class" name="admin-0-class" class="underline-input" value="test1" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="admin-0-id">學號</label>
+                    <input type="text" id="admin-0-id" name="admin-0-id" class="underline-input" value="000000" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="landlord-name">房東姓名</label>
+                    <input type="text" id="landlord-name" name="landlord-name" class="underline-input" value="landlord" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="landlord-phone">房東電話</label>
+                    <input type="text" id="landlord-phone" name="landlord-phone" class="underline-input" value="0900000000" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="address">賃居地址</label>
+                    <input type="text" id="address" name="address" class="underline-input" value="無" disabled>
+                </div>
+                <div class="form-group">
+                    <label>環境整潔</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-clean-good" name="admin-0-clean" value="good" checked disabled>
+                        <label for="admin-0-clean-good">良好</label>
+                        <input type="radio" id="admin-0-clean-bad" name="admin-0-clean" value="bad" disabled>
+                        <label for="admin-0-clean-bad">異常</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>讀書情況</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-study-good" name="admin-0-study" value="good" checked disabled>
+                        <label for="admin-0-study-good">良好</label>
+                        <input type="radio" id="admin-0-study-bad" name="admin-0-study" value="bad" disabled>
+                        <label for="admin-0-study-bad">異常</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>主客相處</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-relationship-good" name="admin-0-relationship" value="good" checked disabled>
+                        <label for="admin-0-relationship-good">良好</label>
+                        <input type="radio" id="admin-0-relationship-bad" name="admin-0-relationship" value="bad"  disabled>
+                        <label for="admin-0-relationship-bad">異常</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>燈光明亮</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-lighting-good" name="admin-0-lighting" value="good" checked disabled>
+                        <label for="admin-0-lighting-good">良好</label>
+                        <input type="radio" id="admin-0-lighting-bad" name="admin-0-lighting" value="bad"  disabled>
+                        <label for="admin-0-lighting-bad">異常</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>交友情況</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-friends-good" name="admin-0-friends" value="good" checked disabled>
+                        <label for="admin-0-friends-good">良好</label>
+                        <input type="radio" id="admin-0-friends-bad" name="admin-0-friends" value="bad" disabled>
+                        <label for="admin-0-friends-bad">異常</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>家長訪親</label>
+                    <div class="radio-group">
+                        <input type="radio" id="admin-0-parents-visit-good" name="admin-0-parents-visit" value="good" checked disabled>
+                        <label for="admin-0-parents-visit-good">良好</label>
+                        <input type="radio" id="admin-0-parents-visit-bad" name="admin-0-parents-visit" value="bad" disabled>
+                        <label for="admin-0-parents-visit-bad">異常</label>
+                    </div>
+                    <div id="additional-fields"></div>
+                </div>
+                <!-- <div id="additional-fields"></div>
+                <button type="button" onclick='addEnvironmentField()'>新增環境相關欄位</button> -->
+                <div class="form-group">
+                    <label for="student-comments"><h2>訪視要點及學生意見</h2></label>
+                    <input type="text" id="student-comments" name="student-comments" class="underline-input" value="" disabled>
+                </div>
+                <div class="frame-two">
+                    <!-- <button type="button" onclick="document.getElementById('imageUpload').click();">上傳圖片</button> -->
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display:none;" onchange="previewImage(event)">
+                    <div id="imagePreview">
+                        <img src="data:image/jpeg;base64,' . $base64Image . '" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+                        <!-- <?php
+                            if (!empty($imgData)) {
+                                $base64Image = base64_encode($imgData);
+                                echo '<img src="data:image/jpeg;base64,' . $base64Image . '" alt="Uploaded Image" style="max-width: 100%; height: auto;">';
+                            }
+                        ?> -->
+                    </div>
+                </div>
+                <div class="frame-three">
+                    <h2>是否需要探訪</h2>
+                    <label><input type="radio" name="visit" value="需要" checked disabled > 需要</label>
+                    <label><input type="radio" name="visit" value="不需要" disabled > 不需要</label>
+                </div>
+                <div class="frame-four">
+                    <h2>探訪時間</h2>
+                    <input type="text" id="daterange" name="daterange" style="position: absolute;left: 100px;top: 22px;" value="" readonly>
+                    <!-- <i id="calendarbar" class="fa fa-calendar" name="daterange" style="font-size: 2.0rem;position: absolute; left: 320px;transform: translateY(-10px);" ></i> -->
+                </div>
+                <div class="frame-one">
+                    <h2>導師評語</h2>
+                    <input type="text" id="manager_opinion" name="manager_opinion" class="underline-input" value="" disabled>
+                </div>
+                <div class="frame-three">
+                    <h2>時段確認</h2>
+                    <label><input type="radio" name="visit_check" value="已確認" > 已確認</label>
+                    <label><input type="radio" name="visit_check" value="未確認" > 未確認</label>
+                </div>
+                <div class="frame-three">
+                    <h2>銷案</h2>
+                    <label><input type="radio" name="close_case" value="未銷案"  > 未銷案</label>
+                    <label><input type="radio" name="close_case" value="已銷案"  > 已銷案</label>
+                </div>
+            </div>
+            <input type="hidden" name="student_id" value="<?php echo $student_id; ?>">
+            <button type="submit" onclick="event.preventDefault();">保存</button>
+        </f>
+    </div>
+    <script src="admin_calendar.js"></script>
+    <script>
+        let additionalFieldCount = 0;
+
+        //抓取新的項目的內容
+        $(document).ready(function() {
+            fetchColumnNames();
+        });
+
+        function fetchColumnNames() {
+            $.ajax({
+                url: 'fetch_columns.php',
+                type: 'GET',
+                success: function(data) {
+                    const columns = JSON.parse(data);
+                    columns.forEach((column, index) => {
+                        addDynamicField(column, index);
+                    });
+                },
+                error: function(err) {
+                    console.error('Error fetching column names:', err);
+                }
+            });
+        }
+
+        function addDynamicField(fieldLabel, index) {
+            const additionalFields = document.getElementById('additional-fields');
+            const fieldId = `additional-field-${index}`;
+            const newField = `
+                <div class="form-group">
+                    <label>${fieldLabel}</label>
+                    <div class="radio-group">
+                        <input type="radio" id="${fieldId}-good" name="${fieldId}" value="good" disabled>
+                        <label for="${fieldId}-good">良好</label>
+                        <input type="radio" id="${fieldId}-bad" name="${fieldId}" value="bad" disabled>
+                        <label for="${fieldId}-bad">異常</label>
+                    </div>
+                </div>
+            `;
+            additionalFields.insertAdjacentHTML('beforeend', newField);
+        }
+        //抓取新的項目的內容
+
+        function addEnvironmentField() {
+            const fieldLabel = prompt("請輸入新欄位的名稱:");
+            if (fieldLabel) {
+                let additionalFields = document.getElementById('additional-fields');
+                let fieldId = additionalFieldCount++;
+                let newField = `
+                    <div class="form-group">
+                        <label>${fieldLabel}</label>
+                        <div class="radio-group">
+                            <input type="radio" id="additional-field-${fieldId}-good" name="additional-field-${fieldId}" value="good">
+                            <label for="additional-field-${fieldId}-good">良好</label>
+                            <input type="radio" id="additional-field-${fieldId}-bad" name="additional-field-${fieldId}" value="bad">
+                            <label for="additional-field-${fieldId}-bad">異常</label>
+                        </div>
+                    </div>
+                `;
+                additionalFields.insertAdjacentHTML('beforeend', newField);
+            }
+        }
+
+        function previewImage(event) {
+            const image = document.getElementById('imageUpload').files[0];
+            const reader = new FileReader();
+            reader.onload = function() {
+                const img = new Image();
+                img.src = reader.result;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const maxWidth = 800; // maximum width
+                    const maxHeight = 800; // maximum height
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height *= maxWidth / width;
+                            width = maxWidth;
+                        }
+                    } else {
+                        if (height > maxHeight) {
+                            width *= maxHeight / height;
+                            height = maxHeight;
+                        }
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const dataUrl = canvas.toDataURL('image/jpeg');
+                    document.getElementById('imagePreview').innerHTML = `<img src="${dataUrl}" alt="Image preview" style="max-width: 100%; height: auto;">`;
+                }
+            }
+            reader.readAsDataURL(image);
+        }
+
+        // Disable all inputs except specific ones
+        // $(document).ready(function() {
+        //     $('input:not(#manager-opinion):not([name="visit"]):not(#student-comments)').attr('disabled', true);
+        //     $('button:not([onclick="addEnvironmentField()"])').attr('disabled', true);
+        // });
+    </script>
+</body>
+</html>

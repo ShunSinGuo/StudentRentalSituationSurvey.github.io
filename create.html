@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="create.css">
+            <title>Creat_Account</title>
+        </head>
+        <body>
+            <form action="create.php" method="post">
+                <div class="create_form">
+                    <div>
+                        <img src="image/logo.png" alt="Logo">
+                        <h1 style="text-align: center;">S R S</h1>
+                        <p style="font-size: 1.5em;">Student Rental Situation Survey</p>
+                    </div>
+                    <div class="input_box_div">
+                        <h2 style="text-align: center; color: #8FAADC;">Create your account</h1>
+                        <input type="account" class="input_box" placeholder="帳號" name="account" id="checkaccount"required>
+                        <input type="password" class="input_box" placeholder="密碼" name="password" id="password"required>
+                        <input type="email" class="input_box" placeholder="Email" name="email"id="checkemail"required>
+                        <input type="submit" class="input_box3" value="Register" onclick="event.preventDefault();">
+                        <a href="./login.html" class="change_color" style="color: #8FAADC;position: absolute;right: 760px; bottom: 350px;">LOGIN!!</a>
+                    </div>
+                </div> 
+            </form>
+            <script>
+                var email = document.getElementById("checkemail");
+                var password = document.getElementById("password");
+                var account = document.getElementById("checkaccount");
+
+                email.addEventListener('input', function() {
+                    var email1 = this.value;
+                    if (!isValidEmail(email1)) {
+                    this.setCustomValidity('請輸入有效的Email地址');
+                    } else {
+                    this.setCustomValidity('');
+                    }
+                });
+                function isValidEmail(email) {
+                    var regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
+                    return regex.test(email);
+                }
+
+                account.addEventListener('input', function() {
+                    var account1 = this.value;
+                    if (!isValidaccount(account1)) {
+                    this.setCustomValidity('無效的帳號');
+                    } else {
+                    this.setCustomValidity('');
+                    }
+                });
+                function isValidaccount(account) {
+                    var regex = /^[A-Za-z0-9]+$/;
+                    return regex.test(account);
+                }
+
+                password.addEventListener('input', function() {
+                    var password1 = this.value;
+                    if (!isValidpassword(password1)) {
+                    this.setCustomValidity('無效的密碼');
+                    } else {
+                    this.setCustomValidity('');
+                    }
+                });
+                function isValidpassword(password) {
+                    var regex = /^[A-Za-z0-9]+$/;
+                    return regex.test(password);
+                }
+                
+            </script> 
+        </body>
+    </html>

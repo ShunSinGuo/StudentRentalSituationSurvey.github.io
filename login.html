@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>SRS Sign up</title>
+  </head>
+  <body>
+    <form action="login.php" method="post">
+      <div class="login_form">
+        <img src="/image/logo.png" alt="Logo" />
+        <h1>S R S</h1>
+        <p style="font-size: 1.5em">Student Rental Situation Survey</p>
+        <input
+          type="text"
+          class="input_box"
+          placeholder="帳號"
+          name="account"
+          required
+        />
+        <input
+          type="password"
+          class="input_box"
+          placeholder="密碼"
+          name="password"
+          required
+        />
+        <input
+          type="text"
+          class="input_box2"
+          placeholder="驗證碼"
+          name="verification_code"
+          required
+        />
+        <img
+          src="verify.php"
+          id="captcha-image"
+          style="position: absolute; left: 250px; bottom: 103px"
+        />
+        <input type="submit" class="input_box3" value="Login" onclick="event.preventDefault();"/>
+        <a href="./create.html" class="change_color" style="color: #8faadc"
+          >JOIN!!</a
+        >
+      </div>
+    </form>
+  </body>
+</html>

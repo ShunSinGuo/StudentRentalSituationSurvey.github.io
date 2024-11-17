@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record Form</title>
+    <link rel="stylesheet" href="student_changefart.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="./admin_server.html">首頁</a>
+      </div>
+      <h1>國立虎尾科技大學113學年度第學期第二學期賃居校外學生輔導訪問記錄表</h1>
+      <form id="recordForm" method="post" action="add_datacolume.php">
+        <div id="students-container"></div>
+        <h3>學生</h3>
+        <div id="student-fields">
+          <div class="form-group">
+            <label for="student-0-name">姓名</label>
+            <input
+              type="text"
+              id="student-0-name"
+              name="student-0-name"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="student-0-class">班級</label>
+            <input
+              type="text"
+              id="student-0-class"
+              name="student-0-class"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="student-0-id">學號</label>
+            <input
+              type="text"
+              id="student-0-id"
+              name="student-0-id"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="landlord-name">房東姓名</label>
+            <input
+              type="text"
+              id="landlord-name"
+              name="landlord-name"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="landlord-phone">房東電話</label>
+            <input
+              type="text"
+              id="landlord-phone"
+              name="landlord-phone"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">賃居地址</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="underline-input"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label>環境整潔</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-clean-good"
+                name="student-0-clean"
+                value="good"
+                disabled
+              />
+              <label for="student-0-clean-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-clean-bad"
+                name="student-0-clean"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-clean-bad">異常</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>讀書情況</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-study-good"
+                name="student-0-study"
+                value="good"
+                disabled
+              />
+              <label for="student-0-study-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-study-bad"
+                name="student-0-study"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-study-bad">異常</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>主客相處</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-relationship-good"
+                name="student-0-relationship"
+                value="good"
+                disabled
+              />
+              <label for="student-0-relationship-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-relationship-bad"
+                name="student-0-relationship"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-relationship-bad">異常</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>燈光明亮</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-lighting-good"
+                name="student-0-lighting"
+                value="good"
+                disabled
+              />
+              <label for="student-0-lighting-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-lighting-bad"
+                name="student-0-lighting"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-lighting-bad">異常</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>交友情況</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-friends-good"
+                name="student-0-friends"
+                value="good"
+                disabled
+              />
+              <label for="student-0-friends-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-friends-bad"
+                name="student-0-friends"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-friends-bad">異常</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>家長訪親</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="student-0-parents-visit-good"
+                name="student-0-parents-visit"
+                value="good"
+                disabled
+              />
+              <label for="student-0-parents-visit-good">良好</label>
+              <input
+                type="radio"
+                id="student-0-parents-visit-bad"
+                name="student-0-parents-visit"
+                value="bad"
+                disabled
+              />
+              <label for="student-0-parents-visit-bad">異常</label>
+            </div>
+          </div>
+          <div id="additional-fields"></div>
+        </div>
+        <button type="button" onclick="addEnvironmentField()">
+          新增環境相關欄位
+        </button>
+        <button type="submit" onclick="event.preventDefault();">保存</button>
+      </form>
+      <div class="form-group">
+        <label for="student-comments"><h2>訪視要點及學生意見</h2></label>
+        <input
+          type="text"
+          id="student-comments"
+          name="student-comments"
+          class="underline-input"
+          disabled
+        />
+      </div>
+      <div class="option">
+        <div class="frame-two">
+          <button
+            type="button"
+            onclick="document.getElementById('imageUpload').click();"
+            disabled
+          >
+            上傳圖片
+          </button>
+          <input
+            type="file"
+            id="imageUpload"
+            name="imageUpload"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+          <div id="imagePreview"></div>
+        </div>
+        <div class="frame-three">
+          <h2>是否需要探訪</h2>
+          <label
+            ><input type="radio" name="visit" value="需要" disabled />
+            需要</label
+          >
+          <label
+            ><input type="radio" name="visit" value="不需要" disabled />
+            不需要</label
+          >
+        </div>
+        <div class="frame-four">
+          <h2>探訪時間</h2>
+          <input
+            type="text"
+            id="daterange"
+            name="daterange"
+            style="position: absolute; left: 100px; top: 22px"
+            readonly
+          />
+          <!-- <i id="calendarbar" class="fa fa-calendar" name="daterange" style="font-size: 2.0rem;position: absolute; left: 320px;transform: translateY(-50px);"></i> -->
+        </div>
+        <div class="frame-one">
+          <h2>導師評語</h2>
+          <input
+            type="text"
+            class="underline-input"
+            id="tutor-comments"
+            disabled
+          />
+        </div>
+      </div>
+      <a href="admin_server.html">
+        <button type="button">返回</button>
+      </a>
+    </div>
+    <script src="admin_calendar.js"></script>
+    <script>
+      let additionalFieldCount = 0; //新增欄位
+
+      //抓取新的項目的內容
+      $(document).ready(function () {
+        fetchColumnNames();
+      });
+
+      function fetchColumnNames() {
+        $.ajax({
+          url: "fetch_columns.php",
+          type: "GET",
+          success: function (data) {
+            const columns = JSON.parse(data);
+            columns.forEach((column, index) => {
+              addDynamicField(column, index);
+            });
+          },
+          error: function (err) {
+            console.error("Error fetching column names:", err);
+          },
+        });
+      }
+
+      function addDynamicField(fieldLabel, index) {
+        const additionalFields = document.getElementById("additional-fields");
+        const fieldId = `additional-field-${index}`;
+        const newField = `
+                <div class="form-group">
+                    <label>${fieldLabel}</label>
+                    <div class="radio-group">
+                        <input type="radio" id="${fieldId}-good" name="${fieldId}" value="good" disabled>
+                        <label for="${fieldId}-good">良好</label>
+                        <input type="radio" id="${fieldId}-bad" name="${fieldId}" value="bad" disabled>
+                        <label for="${fieldId}-bad">異常</label>
+                    </div>
+                </div>
+            `;
+        additionalFields.insertAdjacentHTML("beforeend", newField);
+      }
+      //抓取新的項目的內容
+
+      //新增欄位
+      function addEnvironmentField() {
+        const fieldLabel = prompt("請輸入新欄位的名稱:");
+        if (fieldLabel) {
+          let additionalFields = document.getElementById("additional-fields");
+          let fieldId = additionalFieldCount++;
+          let newField = `
+                    <div class="form-group">
+                        <label>${fieldLabel}</label>
+                        <div class="radio-group">
+                            <input type="radio" id="additional-field-${fieldId}-good" name="additional-field-${fieldId}" value="good">
+                            <label for="additional-field-${fieldId}-good">良好</label>
+                            <input type="radio" id="additional-field-${fieldId}-bad" name="additional-field-${fieldId}" value="bad">
+                            <label for="additional-field-${fieldId}-bad">異常</label>
+                        </div>
+                    </div>
+                `;
+          additionalFields.insertAdjacentHTML("beforeend", newField);
+
+          // 添加隱藏輸入以儲存新名稱
+          const hiddenField = document.createElement("input");
+          hiddenField.type = "hidden";
+          hiddenField.name = "new_fields[]";
+          hiddenField.value = fieldLabel;
+          document.getElementById("recordForm").appendChild(hiddenField);
+        }
+      }
+      //新增欄位
+
+      function previewImage(event) {
+        const image = document.getElementById("imageUpload").files[0];
+        const reader = new FileReader();
+        reader.onload = function () {
+          const img = new Image();
+          img.src = reader.result;
+          img.onload = function () {
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            const maxWidth = 800; // maximum width
+            const maxHeight = 800; // maximum height
+            let width = img.width;
+            let height = img.height;
+
+            if (width > height) {
+              if (width > maxWidth) {
+                height *= maxWidth / width;
+                width = maxWidth;
+              }
+            } else {
+              if (height > maxHeight) {
+                width *= maxHeight / height;
+                height = maxHeight;
+              }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(img, 0, 0, width, height);
+            const dataUrl = canvas.toDataURL("image/jpeg");
+            document.getElementById(
+              "imagePreview"
+            ).innerHTML = `<img src="${dataUrl}" alt="Image preview" style="max-width: 100%; height: auto;">`;
+          };
+        };
+        reader.readAsDataURL(image);
+      }
+      // $(document).ready(function() {
+      //     $('input:not(#manager-opinion):not([name="visit"]):not(#student-comments)').attr('disabled', true);
+      //     $('button:not([onclick="addEnvironmentField()"])').attr('disabled', true);
+      // });
+    </script>
+  </body>
+</html>

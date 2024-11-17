@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #293d52;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  padding: 20px;
+  padding-bottom: 60px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  left: 100px;
+}
+
+th,
+td {
+  border: 1px solid #3c5161;
+  text-align: center;
+}
+
+th {
+  background-color: #3c4c58;
+  text-align: center;
+}
+
+td {
+  background-color: #37464f;
+}
+
+.header,
+.header-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-button {
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 120px;
+}
+
+.header-button:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  color: #ffffff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.fa-pencil,
+.fa-calendar {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.daterangepicker {
+  background: #273c50 !important;
+  color: white !important;
+  position: relative;
+}
+
+.daterangepicker .calendar-table {
+  background: #273c50 !important;
+  color: white !important;
+  position: relative;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+.daterangepicker td.available:hover {
+  background-color: #0069d9 !important;
+  color: white !important;
+}
+
+.daterangepicker .ranges,
+.daterangepicker .drp-buttons {
+  background: #273c50 !important;
+}
+
+.daterangepicker .drp-buttons .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.daterangepicker .drp-buttons .btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* 新增部分：其他月份的日期 */
+.daterangepicker td.off,
+.daterangepicker td.off:hover {
+  background: #273c50 !important;
+  color: white !important;
+}
+
+#searchButton,
+#searchNameButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#searchButton:hover,
+#searchNameButton:hover {
+  color: #007bff;
+}

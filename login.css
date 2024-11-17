@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #293d52;
+}
+
+h1,
+p {
+  color: #dddddd;
+  margin-top: 20px;
+}
+
+div.login_form {
+  position: absolute;
+  width: 100%;
+  left: 780px;
+  max-width: 350px;
+  top: 100px;
+  text-align: center;
+}
+
+.input_box {
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid #999;
+  outline: none;
+}
+
+.input_box2 {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 130px 0px -10px;
+  width: 60%;
+  border: 1px solid #999;
+  outline: none;
+}
+
+.input_box3 {
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0;
+  width: 100%;
+  border: 1px solid #999;
+  outline: none;
+}

@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #293d52;
+}
+
+h2 {
+  color: #dddddd;
+  margin-top: 20px;
+}
+
+div.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.btn-r {
+  width: 70%;
+  transform: translateX(220px);
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 80px 0 80px 0;
+  margin: 100px;
+  width: 250px;
+  background: #273c50;
+  color: white;
+  border-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logout {
+  font-size: 20px;
+  color: #dddddd;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}

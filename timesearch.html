@@ -1,0 +1,192 @@
+<!-- <?php
+// 連線到資料庫
+    require_once('conn.php');
+
+// 獲取查詢條件
+$daterange = isset($_GET['daterange']) ? $_GET['daterange'] : '';
+$address = isset($_GET['address']) ? $_GET['address'] : '';
+$landlord_name = isset($_GET['landlord_name']) ? $_GET['landlord_name'] : '';
+
+// 解析日期範圍
+if (!empty($daterange)) {
+    $dates = explode(' - ', $daterange);
+    if (count($dates) == 2) {
+        $start_date = $dates[0];
+        $end_date = $dates[1];
+    } else {
+        $start_date = $dates[0];
+        $end_date = $dates[0];
+    }
+} else {
+    $start_date = '';
+    $end_date = '';
+}
+
+
+// 構建SQL查詢語句
+$sql = "SELECT * FROM t08_record WHERE 1=1";
+
+if (!empty($address)) {
+    $sql .= " AND address LIKE '%" . $conn->real_escape_string($address) . "%'";
+}
+if (!empty($landlord_name)) {
+    $sql .= " AND landlord_name LIKE '%" . $conn->real_escape_string($landlord_name) . "%'";
+}
+if (!empty($start_date) && !empty($end_date)) {
+    $sql .= " AND reserve_date BETWEEN '" . $conn->real_escape_string($start_date) . "' AND '" . $conn->real_escape_string($end_date) . "'";
+}
+
+// 執行查詢
+$result = $conn->query($sql);
+
+// 檢查查詢是否成功
+if (!$result) {
+    die("查詢失敗: " . $conn->error);
+}
+?> -->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預約列表</title>
+    <link rel="stylesheet" href="timesearch.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="admin_server.html">首頁</a>
+            <button type="button" id="resetButton" class="header-button" onclick="event.preventDefault();">重置搜尋</button>
+        </div>
+        <form id="searchForm" action="timesearch.php" method="get">
+            <table>
+                <thead>
+                    <tr>
+                        <th>預約日期 <i id="calendarbar" class="fa fa-calendar"></i>
+                            <input type="text" name="daterange" id="daterange" value="">
+                        </th>
+                        <th>地址 <button type="button" id="searchButton" class="fa fa-search"></button>
+                        </th>
+                        <th>房東名稱 <button type="button" id="searchNameButton" class="fa fa-search"></button>
+                        </th>
+                        <th>時段確認</th>
+                        <th>銷案</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style='cursor: pointer;'>
+                        <td>2024/02/24</td>
+                        <td>無</td>
+                        <td>landlord</td>
+                        <td>確定</td>
+                        <td>已銷案</td>
+                    </tr>
+                    <!-- <?php
+                    if ($result->num_rows > 0) {
+                        // 輸出數據
+                        while ($row = $result->fetch_assoc()) {
+                            if($row["visit_status"]=="需要" && $row["close_case"]=="未銷案"){
+                                echo "<tr onclick=\"window.location.href='timecheck_fart.php?student_id={$row["student_id"]}'\" style='cursor: pointer;'>
+                                    <td>" . htmlspecialchars($row["reserve_date"]) . "</td>
+                                    <td>" . htmlspecialchars($row["address"]) . "</td>
+                                    <td>" . htmlspecialchars($row["landlord_name"]) . "</td>
+                                    <td>" . htmlspecialchars($row["visit_check"]) . "</td>
+                                    <td>" . htmlspecialchars($row["close_case"]) . "</td>
+                                </tr>";
+                            }
+                        }
+                    } else {
+                        echo "<tr><td colspan='4'>沒有找到符合條件的記錄</td></tr>";
+                    }
+                    ?> -->
+                </tbody>
+            </table>
+        </form>
+        <a href="login.html" class="logout">登出</a>
+        <!-- <a href="logout.php" class="logout">登出</a> -->
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#calendarbar').on('click', function() {
+                $('#daterange').focus();
+            });
+
+            $('#daterange').daterangepicker({
+                locale: {
+                    format: 'YYYY/MM/DD',
+                    separator: ' - ',
+                    applyLabel: '確定',
+                    cancelLabel: '取消',
+                    fromLabel: '自',
+                    toLabel: '至',
+                    customRangeLabel: '自定義',
+                    daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    firstDay: 1
+                },
+                autoUpdateInput: false,  // 自动更新输入框的值
+                showDropdowns: true      // 允许下拉选择年份和月份
+            }, function(start, end, label) {
+                $('#daterange').val(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+                $('#searchForm').submit(); // 提交表单
+            });
+
+            $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+                if (picker.startDate.format('YYYY/MM/DD') === picker.endDate.format('YYYY/MM/DD')) {
+                    $(this).val(picker.startDate.format('YYYY/MM/DD'));
+                } else {
+                    $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+                }
+                $('#searchForm').submit(); // 提交表单
+            });
+
+            $('#searchButton').on('click', function() {
+                var searchText = prompt("請輸入要查詢的地址:");
+                if (searchText) {
+                    $('table tbody tr').each(function() {
+                        var address = $(this).find('td:nth-child(2)').text();
+                        if (address.indexOf(searchText) === -1) {
+                            $(this).hide();
+                        } else {
+                            $(this).show();
+                        }
+                    });
+                }
+            });
+
+            $('#searchNameButton').on('click', function() {
+                var searchText = prompt("請輸入房東名稱進行查詢:");
+                if (searchText) {
+                    $('tbody tr').each(function() {
+                        var row = $(this);
+                        var landlordName = row.find('td:nth-child(3)').text();
+                        if (landlordName.indexOf(searchText) === -1) {
+                            row.hide();
+                        } else {
+                            row.show();
+                        }
+                    });
+                }
+            });
+
+            // $('#resetButton').on('click', function() {
+            //     $('#daterange').val('');
+            //     $('#address').val('');
+            //     $('#landlord_name').val('');
+            //     window.location.href = 'timesearch.php';
+            // });
+        });
+    </script>
+</body>
+</html>
+
+<!-- <?php
+// 關閉連接
+$conn->close();
+?> -->

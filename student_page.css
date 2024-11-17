@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ddd;
+}
+
+body {
+  background-color: #293d52;
+}
+
+h1 {
+  position: absolute;
+  display: inline;
+  color: #ddd;
+  bottom: 20px;
+}
+
+div.zone {
+  position: absolute;
+  width: 70%;
+  top: 150px;
+  left: 250px;
+}
+
+a {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.l-t {
+  top: 20px;
+  left: 20px;
+}
+
+.l-b {
+  bottom: 20px;
+  left: 20px;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #ddd;
+}
+
+div.self-data {
+  position: fixed;
+  top: 150px;
+  left: 250px;
+}
+
+div.house-data {
+  position: fixed;
+  top: 150px;
+  left: 45%;
+}
+
+div.output {
+  display: flex;
+  padding-top: 80px;
+}
+
+input.ans {
+  background-color: transparent;
+  font-size: 1.5rem;
+  border-style: solid;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px;
+  border-left: 0;
+  margin-left: 100px;
+  outline: none;
+}
+
+input.editable {
+  background-color: #9dc7f5;
+  font-size: 1.5rem;
+  color: #000;
+  border-style: solid;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px;
+  border-left: 0;
+  margin-left: 100px;
+  outline: none;
+}
+
+::placeholder {
+  color: #ddd;
+}
+
+.hidden {
+  display: none;
+}

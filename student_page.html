@@ -1,0 +1,158 @@
+<!-- <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+session_start();
+$servername = "127.0.0.1";
+$username = "course";
+$password = "9f8ydwxyuB";
+$dbname = "csie113";
+
+// 創建連接 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // 只查詢對應email的記錄
+    $email = $_SESSION['email'];
+    $stmt = $conn->prepare("SELECT `name`, `department`, `student_id`, `Email` FROM `t08_student_information` WHERE `Email` = :email LIMIT 1");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    // 檢查查詢結果
+    if ($stmt->rowCount() > 0) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        // 取得查詢結果中的相關數據
+        $name = $row['name'];
+        $department = $row['department'];
+        $student_id = $row['student_id'];
+        $email = $row['Email'];
+
+    } else {
+        echo "未找到符合條件的記錄。";
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
+        $name = $_POST['name'];
+        $class = $_POST['class'];
+        $student_id = $_POST['student_id'];
+        $email = $_POST['email'];
+
+        
+
+
+        // 使用準備好的SQL語句和綁定變數
+        $sql = "UPDATE `t08_student_information` SET `name`=:name, `department`=:class, `student_id`=:student_id WHERE `Email`=:email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':class', $class);
+        $stmt->bindParam(':student_id', $student_id);
+        $stmt->bindParam(':email', $email);
+    
+        if ($stmt->execute()) {
+            echo "<script>alert('Record updated successfully');</script>";
+            // 更新成功後，重新查詢並更新 $row 的值
+            $stmt = $conn->prepare("SELECT `name`, `department`, `student_id`, `Email` FROM `t08_student_information` WHERE `Email` = :email LIMIT 1");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            // 更新後的值
+            $name = $row['name'];
+            $department = $row['department'];
+            $student_id = $row['student_id'];
+            $email = $row['Email'];
+        } else {
+            echo "Error updating record: ";
+        }
+
+
+        $sql = "SELECT * FROM `t08_record` WHERE `student_id`=:student_id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':student_id', $student_id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() == 0){
+            // create new profile
+            $sql = "INSERT INTO t08_record (student_id,write_date) 
+                VALUES ('$student_id','".date('Y-m-d')."')";
+            $conn->query($sql);
+
+        }
+
+    
+        
+    }
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?> -->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="student_page.css">
+    <title>個人資料</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <div class="zone">
+                <h1>基本資料</h1>
+                <hr style="width: 100%;">
+            </div>
+            <div class="self-data">
+                <div class="output">
+                    <p>姓名</p>
+                    <input type="text" name="name" class="ans" value="water" readonly>
+                </div>
+                <div class="output">
+                    <p>班級</p>
+                    <input type="text" name="class" class="ans" value="test1" readonly>
+                </div>
+                <div class="output">
+                    <p>學號</p>
+                    <input type="text" name="student_id" class="ans" value="000000" readonly>
+                </div>
+                <div class="output">
+                    <p>Email</p>
+                    <input type="text" name="email" class="ans" value="test@gmail.com" readonly>
+                </div>
+            </div>
+            <a href="student_server.html" class="l-t">首頁</a>
+            <a href="login.html" class="l-b">登出</a>
+            <!-- <a href="logout.php" class="l-b">登出</a> -->
+            <div class="button-change">
+                <input type="button" id="editBtn" value="修改"  style="position: absolute;bottom: 20px; left: 100px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
+                <input type="submit" name="save" id="saveBtn" class="hidden" value="儲存" onclick="event.preventDefault();" style="position:absolute;bottom: 20px;left: 100px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
+                <input type="button" id="cancelBtn" class="hidden" value="取消" style="position:absolute;bottom: 20px;left: 150px; border:none; cursor: pointer; font-size: 1.2rem; background-color: transparent;">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('editBtn').addEventListener('click', function() {
+            document.querySelectorAll('.ans').forEach(function(input) {
+                input.removeAttribute('readonly');
+                input.classList.add('editable');
+                input.classList.remove('ans');
+            });
+            document.getElementById('editBtn').classList.add('hidden');
+            document.getElementById('saveBtn').classList.remove('hidden');
+            document.getElementById('cancelBtn').classList.remove('hidden');
+        });
+
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            document.querySelectorAll('.editable').forEach(function(input) {
+                input.setAttribute('readonly', 'readonly');
+                input.classList.remove('editable');
+                input.classList.add('ans');
+                input.value = input.defaultValue;
+            });
+            document.getElementById('editBtn').classList.remove('hidden');
+            document.getElementById('saveBtn').classList.add('hidden');
+            document.getElementById('cancelBtn').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

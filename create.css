@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #293D52;
+}
+
+h1,p {
+    color: #DDDDDD;
+    margin-top: 20px;
+}
+
+div {
+    margin-top: 120px;
+}
+
+div.create_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.input_box_div {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+}
+
+.input_box {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 200px;
+    width: 50%;
+    border: 1px solid #999;
+    outline: none;
+}
+
+.input_box3{
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0 0 200px;
+    width: 50%;
+    border: 1px solid #999;
+    outline: none;
+}
