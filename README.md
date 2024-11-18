@@ -15,7 +15,7 @@
 
 ### 二、註冊畫面
 
-![圖 2、註冊畫面]([image_url_2](https://github.com/user-attachments/assets/79bf457c-7e4a-4526-9c4f-f1f980b17576))
+![圖 2、註冊畫面](https://github.com/user-attachments/assets/79bf457c-7e4a-4526-9c4f-f1f980b17576)
 
 上圖為註冊畫面，使用者只需輸入帳號、密碼以及 Email，即可註冊帳號。
 
@@ -25,7 +25,7 @@
 
 ### 三、學生端畫面
 
-![圖 3、學生畫面]([image_url_3](https://github.com/user-attachments/assets/bd316c60-d2f3-493b-9277-e92ff4866b26))
+![圖 3、學生畫面](https://github.com/user-attachments/assets/bd316c60-d2f3-493b-9277-e92ff4866b26)
 
 上圖為學生畫面。成功登入後，學生可以使用圖中的兩個功能，分別為「個人資料」與「租賃處自評表單填寫」。
 
