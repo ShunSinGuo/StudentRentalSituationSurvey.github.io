@@ -138,7 +138,7 @@
 
 ![圖 18、新增完畢後之表單頁面](https://github.com/user-attachments/assets/8de69994-9e30-40af-ae79-3d5030c66d49)
 
-## 前後台架構圖
+## 十、前後台架構圖
 
 ### 前端
 
@@ -153,7 +153,7 @@
 
 ---
 
-### 二、後端
+### 後端
 
 #### 查詢架構圖
 ![圖 22、查詢架構圖](https://github.com/user-attachments/assets/90b338ad-de1e-499d-b303-e04f0441a5ba)
@@ -163,10 +163,10 @@
 
 ---
 
-## ER 圖
+## 十一、ER 圖
 
 ![圖 24、ER 圖](https://github.com/user-attachments/assets/2fb448aa-065f-42b2-8ae8-83ffb5e1b7de)
 
-## 綱要表
+## 十二、綱要表
 
 ![圖 25、綱要表圖](https://github.com/user-attachments/assets/20ca0925-1de8-4db1-ac46-35cc19466bf0)
