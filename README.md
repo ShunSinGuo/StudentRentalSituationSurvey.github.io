@@ -1,4 +1,4 @@
-# STUDENT RENTAL SITUATION SURVEY
+![image](https://github.com/user-attachments/assets/fa3f3482-e269-4da9-9f38-8ec5d640e91c)# STUDENT RENTAL SITUATION SURVEY
 
 ## 版面解說
 
@@ -11,16 +11,11 @@
 - **登入（Login）：** 當使用者輸入正確的帳號、密碼以及驗證碼後，即可進入系統。
 - **註冊（JOIN!!）：** 如果是第一次使用此系統的使用者，可以利用此功能新建一個帳號。
 
-使用者帳號：`user304`  
-使用者密碼：`lab304u`  
-管理者帳號：`admin304`  
-管理者密碼：`lab304a`
-
 ---
 
 ### 二、註冊畫面
 
-![圖 2、註冊畫面](image_url_2)
+![圖 2、註冊畫面]([image_url_2](https://github.com/user-attachments/assets/79bf457c-7e4a-4526-9c4f-f1f980b17576))
 
 上圖為註冊畫面，使用者只需輸入帳號、密碼以及 Email，即可註冊帳號。
 
@@ -30,7 +25,7 @@
 
 ### 三、學生端畫面
 
-![圖 3、學生畫面](image_url_3)
+![圖 3、學生畫面]([image_url_3](https://github.com/user-attachments/assets/bd316c60-d2f3-493b-9277-e92ff4866b26))
 
 上圖為學生畫面。成功登入後，學生可以使用圖中的兩個功能，分別為「個人資料」與「租賃處自評表單填寫」。
 
@@ -43,15 +38,17 @@
 
 #### 初始基本資料頁面
 
-![圖 4、基本資料頁面](image_url_4)
+![圖 4、基本資料頁面](https://github.com/user-attachments/assets/a5796275-a77a-4984-a705-f9f4ad129b42)
 
 #### 修改基本資料
 
-![圖 5、修改基本資料](image_url_5)
+![圖 5、修改基本資料](https://github.com/user-attachments/assets/3639c859-0675-49c8-8979-ac9c9b82f73f)
+)
 
 #### 修改完成後的基本資料頁面
 
-![圖 6、修改完成基本資料頁面](image_url_6)
+![圖 6、修改完成基本資料頁面](https://github.com/user-attachments/assets/43373bf9-1cd9-4e88-8c94-4920f52f1d5b)
+
 
 上圖 4 至圖 6 為學生基本資料頁面：
 
@@ -65,11 +62,11 @@
 
 #### 自評表初始頁面
 
-![圖 7、租賃處自評表頁面](image_url_7)
+![圖 7、租賃處自評表頁面](https://github.com/user-attachments/assets/cca34a68-4087-4dfe-a6a9-7d0a5e9d5c31)
 
 #### 完成填寫後的自評表
 
-![圖 8、填寫完租賃處自評表頁面](image_url_8)
+![圖 8、填寫完租賃處自評表頁面](https://github.com/user-attachments/assets/46ff4210-fda6-42a3-add5-29274db8b05b)
 
 上圖 7 至圖 8 為租賃處自評表頁面：
 
@@ -80,7 +77,7 @@
 
 ### 六、管理者畫面
 
-![圖 9、管理者畫面](image_url_9)
+![圖 9、管理者畫面](https://github.com/user-attachments/assets/c9d31cf8-8bfd-4d9c-abfe-dbd65d7c8eff)
 
 上圖為管理者畫面。成功登入後，管理者可以使用圖中的三個功能，分別為「查詢學生填寫紀錄」、「時段確認」以及「表單修改」。
 
@@ -94,17 +91,18 @@
 
 #### 查詢紀錄頁面
 
-![圖 10、查詢學生填寫紀錄畫面](image_url_10)
+![圖 10、查詢學生填寫紀錄畫面](https://github.com/user-attachments/assets/9eeedc15-2959-4509-876f-4ae564c27088)
 
 #### 點擊紀錄後查看表單
 
-![圖 11、點擊學生填寫紀錄之表單畫面](image_url_11)
+![圖 11、點擊學生填寫紀錄之表單畫面](https://github.com/user-attachments/assets/9a0b4410-9a0a-427f-ac75-e62d0b0fca5c)
 
 #### 表單異常處理與 Email 寄送
 
-![圖 12、有異常表單使用審核功能寄 Email](image_url_12)
+![圖 12、有異常表單使用審核功能寄 Email](https://github.com/user-attachments/assets/d52aac5f-7761-48d5-a753-099f1675d878)
 
-![圖 13、收件人確認有收到信件](image_url_13)
+![圖 13、收件人確認有收到信件](https://github.com/user-attachments/assets/21b5e367-acfd-4466-85cb-0d300bf2f116)
+
 
 ---
 
@@ -112,11 +110,11 @@
 
 #### 時段確認畫面
 
-![圖 14、時段確認畫面](image_url_14)
+![圖 14、時段確認畫面](https://github.com/user-attachments/assets/079dec14-cea8-4503-b9b5-e4baa7631819)
 
 #### 進入時段確認之表單
 
-![圖 15、進入出現在時段確認畫面之表單](image_url_15)
+![圖 15、進入出現在時段確認畫面之表單](https://github.com/user-attachments/assets/1b8d3039-4080-4ee2-a655-d9c2ff6d70d0)
 
 ---
 
@@ -124,13 +122,13 @@
 
 #### 表單修改初始畫面
 
-![圖 16、進入表單修改畫面](image_url_16)
+![圖 16、進入表單修改畫面](https://github.com/user-attachments/assets/b971fc49-28af-40a3-b3b1-a49b62f7a176)
 
 #### 新增欄位對話框
 
-![圖 17、輸入新增欄位之對話框](image_url_17)
+![圖 17、輸入新增欄位之對話框](https://github.com/user-attachments/assets/07ecc215-6041-4266-9fde-2c4fe32eeddd)
 
 #### 新增完成後的表單畫面
 
-![圖 18、新增完畢後之表單頁面](image_url_18)
+![圖 18、新增完畢後之表單頁面](https://github.com/user-attachments/assets/8de69994-9e30-40af-ae79-3d5030c66d49)
 
