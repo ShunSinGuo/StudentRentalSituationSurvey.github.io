@@ -6,7 +6,9 @@
 
 ## 版面介紹
 ### 登入畫面
-<div align="center">![image](https://github.com/user-attachments/assets/ad86e347-90c3-4b2a-9eef-b9dfc594ca4d) </div>
+<center>
+![image](https://github.com/user-attachments/assets/ad86e347-90c3-4b2a-9eef-b9dfc594ca4d) 
+</center>
 <br><p align="center">圖 1、登入畫面</p><br>
 上圖為登入畫面。畫面中包含了讓使用者輸入帳號、密碼、驗證碼的欄位，以及「登入」（Login）和「註冊」（JOIN!!）按鈕。
 登入（Login）：當使用者輸入正確的帳號、密碼以及驗證碼後，即可進入系統。
