@@ -138,3 +138,38 @@
 
 ![圖 18、新增完畢後之表單頁面](https://github.com/user-attachments/assets/8de69994-9e30-40af-ae79-3d5030c66d49)
 
+## 前後台架構圖
+
+### 前端
+
+#### 登入畫面架構圖
+![圖 19、登入畫面架構圖](![image](https://github.com/user-attachments/assets/4adda4b3-ca4c-4646-825c-251c19429a12)
+)
+
+#### 學生畫面架構圖
+![圖 20、學生畫面架構圖](![image](https://github.com/user-attachments/assets/583bffa6-3731-4ac8-9485-cdcb3df18d5d)
+)
+
+#### 管理者畫面架構圖
+![圖 21、管理者畫面架構圖](![image](https://github.com/user-attachments/assets/0f0127db-5a16-4143-bf70-7aadcc4fbeb4)
+)
+
+---
+
+### 二、後端
+
+#### 查詢架構圖
+![圖 22、查詢架構圖](https://github.com/user-attachments/assets/90b338ad-de1e-499d-b303-e04f0441a5ba)
+
+#### 時段確認架構圖
+![圖 23、時段確認架構圖](https://github.com/user-attachments/assets/c83f5d24-7b7f-49f2-9487-10cab50ed492)
+
+---
+
+## ER 圖
+
+![圖 24、ER 圖](https://github.com/user-attachments/assets/2fb448aa-065f-42b2-8ae8-83ffb5e1b7de)
+
+## 綱要表
+
+![圖 25、綱要表圖](https://github.com/user-attachments/assets/20ca0925-1de8-4db1-ac46-35cc19466bf0)
