@@ -6,14 +6,14 @@
 
 ## 版面介紹
 ### 登入畫面
-<center>
-![image](https://github.com/user-attachments/assets/ad86e347-90c3-4b2a-9eef-b9dfc594ca4d) 
-</center>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ad86e347-90c3-4b2a-9eef-b9dfc594ca4d" alt="image description" />
+</div>
 <br><p align="center">圖 1、登入畫面</p><br>
 上圖為登入畫面。畫面中包含了讓使用者輸入帳號、密碼、驗證碼的欄位，以及「登入」（Login）和「註冊」（JOIN!!）按鈕。
 登入（Login）：當使用者輸入正確的帳號、密碼以及驗證碼後，即可進入系統。
 註冊（JOIN!!）：如果是第一次使用此系統的使用者，可以利用此功能新建一個帳號。
-
+<>
 ### 註冊畫面
 ![image](https://github.com/user-attachments/assets/29783e0c-f935-4168-93c9-266bd192bcd3)
 <br><p align="center">圖 2、註冊畫面</p><br>
