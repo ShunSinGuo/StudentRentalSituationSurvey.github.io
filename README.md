@@ -159,7 +159,7 @@
 ![圖 22、查詢架構圖](https://github.com/user-attachments/assets/90b338ad-de1e-499d-b303-e04f0441a5ba)
 
 #### 時段確認架構圖
-![圖 23、時段確認架構圖](https://github.com/user-attachments/assets/c83f5d24-7b7f-49f2-9487-10cab50ed492)
+![圖 23、時段確認架構圖](https://github.com/user-attachments/assets/f5121fcf-fbe1-4d3f-aa98-f8580eb94a9d)
 
 ---
 
