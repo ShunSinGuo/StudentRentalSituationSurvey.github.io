@@ -143,16 +143,13 @@
 ### 前端
 
 #### 登入畫面架構圖
-![圖 19、登入畫面架構圖](![image](https://github.com/user-attachments/assets/4adda4b3-ca4c-4646-825c-251c19429a12)
-)
+![圖 19、登入畫面架構圖](https://github.com/user-attachments/assets/4adda4b3-ca4c-4646-825c-251c19429a12)
 
 #### 學生畫面架構圖
-![圖 20、學生畫面架構圖](![image](https://github.com/user-attachments/assets/583bffa6-3731-4ac8-9485-cdcb3df18d5d)
-)
+![圖 20、學生畫面架構圖](https://github.com/user-attachments/assets/583bffa6-3731-4ac8-9485-cdcb3df18d5d)
 
 #### 管理者畫面架構圖
-![圖 21、管理者畫面架構圖](![image](https://github.com/user-attachments/assets/0f0127db-5a16-4143-bf70-7aadcc4fbeb4)
-)
+![圖 21、管理者畫面架構圖](https://github.com/user-attachments/assets/0f0127db-5a16-4143-bf70-7aadcc4fbeb4)
 
 ---
 
