@@ -49,7 +49,6 @@
 #### 修改基本資料
 
 ![圖 5、修改基本資料](https://github.com/user-attachments/assets/3639c859-0675-49c8-8979-ac9c9b82f73f)
-)
 
 #### 修改完成後的基本資料頁面
 
