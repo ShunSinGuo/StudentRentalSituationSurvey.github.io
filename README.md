@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fa3f3482-e269-4da9-9f38-8ec5d640e91c)# STUDENT RENTAL SITUATION SURVEY
+# STUDENT RENTAL SITUATION SURVEY
 
 ## 版面解說
 
