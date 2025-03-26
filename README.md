@@ -1,5 +1,7 @@
 # STUDENT RENTAL SITUATION SURVEY
-
+Login : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/login.html
+Student : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/student_server.html
+Teacher : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/admin_server.html
 ## 簡介
 
 我們實做了一個賃租校外學生訪問系統，為老師和學生提供了一個更便捷的平台。
