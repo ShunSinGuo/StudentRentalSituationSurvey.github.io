@@ -1,6 +1,6 @@
 # STUDENT RENTAL SITUATION SURVEY
 Login : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/login.html    
-Student : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/student_server.html
+Student : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/student_server.html    
 Teacher : https://shunsinguo.github.io/StudentRentalSituationSurvey.github.io/admin_server.html
 ## 簡介
 
